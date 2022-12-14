@@ -168,7 +168,7 @@ pub fn download_file(dropbox_path: &str, file_system_path: &str){
     let client = UserAuthDefaultClient::new(auth.clone());
     let dropbox_file = dropbox_sdk::files::download(&client, &dropbox_sdk::files::DownloadArg::new(dropbox_path.clone().to_string()), None, None);
 
-    log::info!("dropbox_file: {:?}", dropbox_file);
+    // log::info!("dropbox_file: {:?}", dropbox_file);
 }
 
 pub fn delete(path: &str){

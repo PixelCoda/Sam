@@ -34,32 +34,32 @@ async fn main() {
 
     simple_logger::SimpleLogger::new().with_colors(true).init().unwrap();
 
-    crate::sam::setup::install().await;
+    // crate::sam::setup::install().await;
 
-    let config = crate::sam::memory::Config::new();
+    // let config = crate::sam::memory::Config::new();
 
-    config.init().await;
+    // config.init().await;
 
-    // Initialize Snapcast Server
-    crate::sam::services::snapcast::init();
+    // // Initialize Snapcast Server
+    // crate::sam::services::snapcast::init();
 
-    // Initialize Web Socket Server
-    crate::sam::services::socket::init();
+    // // Initialize Web Socket Server
+    // crate::sam::services::socket::init();
 
-    // Initialize RTSP Service
-    crate::sam::services::rtsp::init();
+    // // Initialize RTSP Service
+    // crate::sam::services::rtsp::init();
 
-    // Initialize Sound Service
-    crate::sam::services::sound::init();
+    // // Initialize Sound Service
+    // crate::sam::services::sound::init();
     
-    // Syncs database with Lifx API
-    crate::sam::services::lifx::ssync();
+    // // Syncs database with Lifx API
+    // crate::sam::services::lifx::ssync();
 
-    // Initialize default settings
-    crate::sam::http::api::settings::set_defaults();
+    // // Initialize default settings
+    // crate::sam::http::api::settings::set_defaults();
     
-    // Configure Snapcast
-    crate::sam::services::snapcast::configure();
+    // // Configure Snapcast
+    // crate::sam::services::snapcast::configure();
 
     // Initialize Storage Service
     crate::sam::services::storage::init();

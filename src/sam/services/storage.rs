@@ -24,8 +24,21 @@ pub fn sql_store(){
 
 pub fn init(){
     let storage_init_thread = thread::Builder::new().name("storage_init".to_string()).spawn(move || {
-        init_cache();
-        crate::sam::services::dropbox::create_folder("/Sam");
+        // init_cache();
+        // crate::sam::services::dropbox::create_folder("/Sam");
+
+
+
+        // Experiment   
+        match crate::sam::services::image::nst::run("/home/kal/test/style.jpg", "/home/kal/test/in.png", "/opt/sam/models/vgg16.ot"){
+            Ok(_) => {
+                log::info!("nst_test_done");
+            },
+            Err(e) => {
+                log::error!("nst_test_error: {:?}", e);
+            }
+        }
+
     });
     
     match storage_init_thread{

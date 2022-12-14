@@ -16,6 +16,7 @@ error_chain! {
         Hound(hound::Error);
         PostError(rouille::input::post::PostError);
         ParseFloatError(std::num::ParseFloatError);
+        TchError(tch::TchError);
     }
 }
 

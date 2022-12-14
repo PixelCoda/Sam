@@ -3,7 +3,6 @@
 //   https://pytorch.org/tutorials/advanced/neural_style_tutorial.html
 //   The pre-trained weights for the VGG16 model can be downloaded from:
 //   https://github.com/LaurentMazare/tch-rs/releases/download/mw/vgg16.ot
-use anyhow::{bail, Result};
 use tch::vision::{imagenet, vgg};
 use tch::{nn, nn::OptimizerConfig, Device, Tensor};
 
@@ -24,21 +23,19 @@ fn style_loss(m1: &Tensor, m2: &Tensor) -> Tensor {
     gram_matrix(m1).mse_loss(&gram_matrix(m2), tch::Reduction::Mean)
 }
 
-pub fn run(style_img: &str, content_img: &str, weights: &str) -> Result<()> {
+pub fn run(style_img: &str, content_img: &str, weights: &str) -> Result<(), crate::sam::services::Error> {
     let device = Device::cuda_if_available();
 
 
     let mut net_vs = tch::nn::VarStore::new(device);
     let net = vgg::vgg16(&net_vs.root(), imagenet::CLASS_COUNT);
-    net_vs.load(&weights).unwrap_or_else(|_| panic!("Could not load weights file {}", &weights));
+    net_vs.load(&weights)?;
     net_vs.freeze();
 
-    let style_img = imagenet::load_image(&style_img)
-        .unwrap_or_else(|_| panic!("Could not load the style file {}", &style_img))
+    let style_img = imagenet::load_image(&style_img)?
         .unsqueeze(0)
         .to_device(device);
-    let content_img = imagenet::load_image(&content_img)
-        .unwrap_or_else(|_| panic!("Could not load the content file {}", &content_img))
+    let content_img = imagenet::load_image(&content_img)?
         .unsqueeze(0)
         .to_device(device);
     let max_layer = STYLE_INDEXES.iter().max().unwrap() + 1;
@@ -59,8 +56,9 @@ pub fn run(style_img: &str, content_img: &str, weights: &str) -> Result<()> {
             .sum();
         let loss = style_loss * STYLE_WEIGHT + content_loss;
         opt.backward_step(&loss);
+        log::info!("{} {}", step_idx, f64::from(loss.clone(&loss)));
         if step_idx % 1000 == 0 {
-            println!("{} {}", step_idx, f64::from(loss));
+            log::info!("{} {}", step_idx, f64::from(loss));
             imagenet::save_image(&input_var, &format!("out{}.jpg", step_idx))?;
         }
     }

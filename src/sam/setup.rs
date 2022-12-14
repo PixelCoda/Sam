@@ -111,6 +111,15 @@ pub async fn install() {
         }
     }
 
+    match crate::sam::services::image::install(){
+        Ok(_) => {
+            log::info!("Image service installed successfully");
+        },
+        Err(e) => {
+            log::error!("Failed to install image service: {}", e);
+        }
+    }
+
 
     #[cfg(not(debug_assertions))]{
         match crate::sam::http::install(){
