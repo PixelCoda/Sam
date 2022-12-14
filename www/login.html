@@ -1,0 +1,104 @@
+<!-- ███████     █████     ███    ███    
+     ██         ██   ██    ████  ████    
+     ███████    ███████    ██ ████ ██    
+          ██    ██   ██    ██  ██  ██    
+     ███████ ██ ██   ██ ██ ██      ██ ██ 
+Copyright 2021-2022 The Open Sam Foundation (OSF)
+Developed by Caleb Mitchell Smith (PixelCoda)
+Licensed under GPLv3....see LICENSE file. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Sam
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+
+    <!-- CSS Files -->
+    <link href="/assets/vendor/fontawesome/css/all.css" rel="stylesheet">
+    <link href="/assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="/assets/fonts/press_start/press_start.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/css/vendor/toastr.min.css" rel="stylesheet" />
+    <link href="/assets/css/vendor/black-dashboard.min.css?v=1.0.0" rel="stylesheet" />
+    <link href="/assets/css/core.css" rel="stylesheet" />
+</head>
+
+<body class=" ">
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+           
+                        <div class="col-lg-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <img width="300px" src='/assets/logo.gif'></img>
+                                    <hr/>
+                                </div>
+                                <form class="user" action="/auth" method="post">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="email" name="email" 
+                                            placeholder="Email...">
+                                    </div>
+
+                                    <div class="form-group">
+                                      <input type="password" class="form-control form-control-user"
+                                          id="password" name="password" 
+                                          placeholder="Password...">
+                                    </div>
+                       
+                                    <button type="submit" href="#" class="btn btn-primary btn-user btn-block">
+                                        Login
+                                    </button>
+                                 
+                             
+                                </form>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+      </div>
+
+</div>
+   
+    <!--   Core JS Files   -->
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="/assets/js/vendor/toastr.min.js"></script>
+   
+</body>
+
+</html>

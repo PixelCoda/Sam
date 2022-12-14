@@ -1,0 +1,200 @@
+<!-- ███████     █████     ███    ███    
+     ██         ██   ██    ████  ████    
+     ███████    ███████    ██ ████ ██    
+          ██    ██   ██    ██  ██  ██    
+     ███████ ██ ██   ██ ██ ██      ██ ██ 
+Copyright 2021-2022 The Open Sam Foundation (OSF)
+Developed by Caleb Mitchell Smith (PixelCoda)
+Licensed under GPLv3....see LICENSE file. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Sam
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+
+  <!-- CSS Files -->
+  <link href="/assets/vendor/fontawesome/css/all.css" rel="stylesheet">
+  <link href="/assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
+  <link href="/assets/fonts/press_start/press_start.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/vendor/toastr.min.css" rel="stylesheet" />
+  <link href="/assets/css/vendor/black-dashboard.min.css?v=1.0.0" rel="stylesheet" />
+  <link href="/assets/css/core.css" rel="stylesheet" />
+</head>
+
+<body class=" ">
+  <div class="wrapper ">
+    <div class="sidebar">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="sidebar-wrapper">
+        
+        <ul class="nav">
+          <li class="active ">
+            <a href="./dashboard.html">
+              <i class="fa fa-home"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="./humans.html">
+              <i class="fa fa-users"></i>
+              <p>Humans</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="./locations.html">
+              <i class="fa fa-map"></i>
+              <p>Locations</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="./media.html">
+              <i class="fa fa-play"></i>
+              <p>Media</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="./pets.html" style="display: none;">
+              <i class="fa fa-dog"></i>
+              <p>Pets</p>
+            </a>
+          </li>
+          <li>
+            <a href="./things.html">
+              <i class="fa fa-lightbulb"></i>
+              <p>Things</p>
+            </a>
+          </li>
+          <li>
+            <a href="./services.html">
+              <i class="fa fa-bars"></i>
+              <p>Services</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="./settings.html">
+              <i class="fa fa-cogs"></i>
+              <p>Settings</p>
+            </a>
+          </li>
+
+
+         
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent   ">
+        <div class="container-fluid">
+
+
+
+
+
+          
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle d-inline">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+
+
+
+            
+            <div id="Clock" class="glow">00:00:00</div>
+            <!-- <a class="navbar-brand" href="#">Hello, <span class="inject-human-name">...</span></a> -->
+          </div>
+    
+          <div class="search-bar input-group topbar-right-buttons">
+
+
+            
+            <button title="Observation Deck" class="btn btn-link" onclick="observation_deck.open();"><i class="fas fa-binoculars"></i></button>
+            <button title="Notifications" class="btn btn-link" style="margin-left: 0;" onclick="notifications.open();"><i class="fas fa-bell"></i></button>
+            <button title="Software Store" class="btn btn-link" style="margin-left: 0;" onclick="oss.show();"><i class="fas fa-store-alt"></i></button>
+            <button title="Search" class="btn btn-link" style="margin-left: 0;" onclick="search_widget.show();"><i class="fas fa-search"></i></button>
+            <button title="Console" class="btn btn-link" style="margin-left: 0;" onclick="window.open('/apps/console/index.html', 'signup', 'menubar=no, location=no, toolbar=no, scrollbars=no, height=300'); return false;"><i class="fas fa-terminal"></i></button>
+       
+          </div>
+        </div>
+      </nav>
+    
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="row">
+
+
+
+
+
+
+
+
+
+
+        </div>
+  
+      </div>
+
+
+
+      <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+      </div>
+
+
+
+      </div>
+    </div>
+
+    <!--   Core JS Files   -->
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+
+    <script src="/assets/js/vendor/bootstrap.min.js"></script>
+<script src="/assets/js/vendor/toastr.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="/assets/js/vendor/bootstrap-notify.js"></script>
+    <script src="/assets/js/vendor/recorder.js"></script>
+    <script src="/assets/js/services/stt.js"></script>
+    <script src="/assets/js/widgets/observation_deck.js"></script>
+    <script src="/assets/js/widgets/files.js"></script>
+    <script src="/assets/js/widgets/clock.js"></script>
+    <script src="/assets/js/widgets/notifications.js"></script>
+    <script src="/assets/js/widgets/search.js"></script>
+    <script src="/assets/js/widgets/oss.js"></script>
+    <script src="/assets/js/apps/video_player.js"></script>
+    <script src="/assets/js/core.js"></script>
+
+
+
+</body>
+
+</html>

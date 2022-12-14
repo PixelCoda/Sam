@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  web:
+    environment:
+      - PG_DBNAME=sam
+      - PG_USER=sam
+      - PG_PASS=zerotrust5
+      - PG_ADDRESS=172.16.0.15
+    build: .
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+  rust:
+    image: "rust:latest"
+    

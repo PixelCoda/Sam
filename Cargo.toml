@@ -1,0 +1,45 @@
+[package]
+name = "sam"
+version = "0.0.2"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.4"
+serde = { version = "1.0.133", features = ["derive"] }
+log = "0.4.14"
+simple_logger = { git = "https://github.com/PixelCoda/rust-simple_logger.git", version = "1.13.6" }
+tokio = { version = "1.4.0", features = ["rt", "rt-multi-thread", "macros"] }
+openssl = { version = "*", features = ["vendored"] }
+tokio-postgres = { version = "0.7.3", features = ["with-chrono-0_4", "with-serde_json-1"] }
+postgres-openssl = "0.5.0"
+postgres-types = "0.2.1"
+serde_postgres = "0.2.0"
+postgres = "0.19.2"
+rouille = { version = "3.4.0", features = ["ssl"] }
+trust-dns-resolver = "0.20.3"
+zip = "0.5.13"
+shuteye = "0.3.3"
+reqwest = { version = "0.11.6", default-features = false, features = ["blocking", "json"] }
+wikipedia = "0.3.4"
+serde_json = "1.0.71"
+sudo = "0.5"
+lifx-rs = "0.1.29"
+lifx-api-server = "0.1.14"
+error-chain = "0.12.4"
+online = "4.0.0"
+simple-websockets = "0.1.4"
+hound = "3.4.0"
+noise-gate = { git = "https://github.com/Michael-F-Bryan/noise-gate.git", version = "0.1.1-alpha.0" }
+dasp = "0.11.0"
+dropbox-sdk = { git = "https://github.com/PixelCoda/dropbox-sdk-rust.git", version = "0.16.2", features = ["dbx_files"] }
+invidious = "0.4.0"
+rustube = { version = "0.6.0", features = ["blocking"] }
+tch = "0.10.1"
+anyhow = "1.0.66"
+
+[features]
+default = ["reqwest/default-tls", "trust-dns-resolver/dns-over-native-tls"]
+vendored-openssl = ["openssl/vendored"]
+rustls = ["reqwest/rustls-tls", "trust-dns-resolver/dns-over-rustls"]

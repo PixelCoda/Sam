@@ -1,0 +1,241 @@
+<!-- ███████     █████     ███    ███    
+     ██         ██   ██    ████  ████    
+     ███████    ███████    ██ ████ ██    
+          ██    ██   ██    ██  ██  ██    
+     ███████ ██ ██   ██ ██ ██      ██ ██ 
+Copyright 2021-2022 The Open Sam Foundation (OSF)
+Developed by Caleb Mitchell Smith (PixelCoda)
+Licensed under GPLv3....see LICENSE file. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Sam Setup
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!-- CSS Files -->
+  <link href="/assets/vendor/fontawesome/css/all.css" rel="stylesheet">
+  <link href="/assets/vendor/fontawesome/css/solid.css" rel="stylesheet">
+  <link href="/assets/fonts/press_start/press_start.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/vendor/toastr.min.css" rel="stylesheet" />
+  <link href="/assets/css/vendor/black-dashboard.min.css?v=1.0.0" rel="stylesheet" />
+  <link href="/assets/css/core.css" rel="stylesheet" />
+</head>
+
+<body class=" " style="overflow: hidden;">
+
+  <center>
+  <div id="theater">
+    <video id="intro_video" src="/assets/videos/setup_intro.mp4" style="height: 200px; display: none;" autoplay></video>
+    <canvas id="intro_video_canvas" style="height: 400px;"></canvas>
+  </div>
+</center>
+
+
+
+  <div class="wrapper ">
+   
+    <div class="main-panel">
+     
+        <div style="margin-left: 20%;margin-right: 20%;margin-top: 50px;">
+          <div class="row">
+            <div class="col-md-12">
+              <form action="/setup" method="post" id="setup_form">
+
+                <!-- Step 1: Account -->
+                <div class="card" style="display: none;" id="setup_step_1_card">
+                  <div class="card-header">
+                    <h5 class="title">Tell me more about you?</h5>
+                  </div>
+                  <div class="card-body">
+                  
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>What's your name?</label>
+                            <input type="text" class="form-control" name="name" id="name">
+                          </div>
+                        </div>
+                        
+                      </div>
+                
+
+                      <div class="row">
+                        <div class="col-md-4 pr-md-1">
+                          <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" id="email">
+                          </div>
+                        </div>
+                        <div class="col-md-4 pl-md-1">
+                          <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" id="password">
+                          </div>
+                        </div>
+                        <div class="col-md-4 pl-md-1">
+                          <div class="form-group">
+                            <label>Confirm</label>
+                            <input type="password" class="form-control" name="password_confirm" id="password_confirm">
+                          </div>
+                        </div>
+                      </div>
+
+
+                    
+                    
+                    
+
+
+                
+                  </div>
+                  <div class="card-footer">
+                    <button type="button" id="step_1_nxt_btn" class="btn btn-fill btn-primary float-right">Next</button>
+                  </div>
+                </div>
+
+
+                <!-- Step 2: Location -->
+                <div class="card" style="display: none;" id="setup_step_2_card">
+                  <div class="card-header">
+                    <h5 class="title">Tell me more about my install location?</h5>
+                  </div>
+                  <div class="card-body">
+
+                    
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Home" name="location_name" id="location_name">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" class="form-control" name="location_address" id="location_address">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4 pr-md-1">
+                          <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control" name="location_city" id="location_city">
+                          </div>
+                        </div>
+                        <div class="col-md-4 px-md-1">
+                          <div class="form-group">
+                            <label>State</label>
+                            <input type="text" class="form-control" name="location_state" id="location_state">
+                          </div>
+                        </div>
+                        <div class="col-md-4 pl-md-1">
+                          <div class="form-group">
+                            <label>Zip Code</label>
+                            <input type="number" class="form-control" name="location_zip" id="location_zip">
+                          </div>
+                        </div>
+                      </div>
+                    
+                    
+
+                  </div>
+                  <div class="card-footer">
+                    <button type="button" id="step_2_prv_btn" class="btn btn-fill btn-primary float-left">Back</button>
+                    <button type="button" id="step_2_nxt_btn" class="btn btn-fill btn-primary float-right">Next</button>
+                  </div>
+                </div>
+
+                <!-- Step 3: Services -->
+                <div class="card" style="display: none;" id="setup_step_3_card">
+                  <div class="card-header">
+                    <h5 class="title">Would you like to connect any streaming services or smart things?</h5>
+                  </div>
+                  <div class="card-body">
+
+                    <div class="row">
+
+                      <div class="col-md-3">
+                        <div class="card ">
+                          <div class="card-header">
+                            <h4 class="card-title"><i class="fab fa-spotify"></i> Spotify</h4>
+                          </div>
+                          <div class="card-body">
+                            <h3>Not Connected</h3>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pair_spotify_modal" aria-expanded="false" aria-controls="pair_spotify_modal" aria-label="pair_spotify_modal">Link</button>
+                            
+                          </div>
+                        </div>
+                      </div>
+            
+            
+                      <div class="col-md-3">
+                        <div class="card ">
+                          <div class="card-header">
+                            <h4 class="card-title"><i class="fa fa-lightbulb"></i> LiFx</h4>
+                          </div>
+                          <div class="card-body">
+                            <h3>Not Connected</h3>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pair_lifx_modal" aria-expanded="false" aria-controls="pair_lifx_modal" aria-label="pair_lifx_modal">Link</button>
+                            
+                          </div>
+                        </div>
+                      </div>
+            
+                   
+                    </div>
+
+
+                  </div>
+                  <div class="card-footer">
+                    <button type="button" id="step_3_prv_btn" class="btn btn-fill btn-primary float-left">Back</button>
+                    <button type="submit" id="step_3_nxt_btn" class="btn btn-fill btn-primary float-right">Finish</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+           
+          
+          </div>
+        </div>
+
+        <div class="bg-animation">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+          <div id="stars4"></div>
+        </div>
+     
+    </div>
+  </div>
+
+    <!--   Core JS Files   -->
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+    <script src="/assets/js/vendor/popper.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.min.js"></script>
+<script src="/assets/js/vendor/toastr.min.js"></script>
+    <script src="/assets/js/vendor/perfect-scrollbar.jquery.min.js"></script>
+    <!--  Google Maps Plugin    -->
+
+
+   
+    <script src="/assets/js/setup.js"></script>
+ 
+</body>
+
+</html>

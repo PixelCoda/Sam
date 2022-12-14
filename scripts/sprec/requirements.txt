@@ -1,0 +1,4 @@
+tensorflow==2.8.0
+tensorflow-gpu==2.8.0
+numpy==1.22.2
+ipython==8.0.1

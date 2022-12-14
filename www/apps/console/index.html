@@ -1,0 +1,44 @@
+<!-- ███████     █████     ███    ███    
+     ██         ██   ██    ████  ████    
+     ███████    ███████    ██ ████ ██    
+          ██    ██   ██    ██  ██  ██    
+     ███████ ██ ██   ██ ██ ██      ██ ██ 
+Copyright 2021-2022 The Open Sam Foundation (OSF)
+Developed by Caleb Mitchell Smith (PixelCoda)
+Licensed under GPLv3....see LICENSE file. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sam Console</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/assets/css/console/style.css"/>
+  </head>
+  <body>
+    <main id="container">
+      <div id="terminal">
+        <section id="terminal__body">
+          <div id="terminal__prompt">
+            <span id="terminal__prompt--user">Caleb<span id="term_host_name_body"></span>:</span>
+            <span class="terminal__prompt--location" id="terminal__prompt--location">~</span>
+            <span id="terminal__prompt--bling">$<span id="terminal__prompt__buffer"></span></span>
+            <span id="terminal__prompt--cursor"></span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Vendor Files-->
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.min.js"></script>
+<script src="/assets/js/vendor/toastr.min.js"></script>
+
+    <script src="/assets/js/services/tts.js"></script>
+
+    <!-- App -->
+	  <script src="/assets/js/apps/console.js"></script>
+  </body>
+</html>
